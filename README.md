@@ -49,3 +49,6 @@ Build an ffmpeg RTSP distribution server using an old alpine:3.8 Docker Image.
     ```bash
     docker stop rtspserver-ffmpeg
     ```
+
+## 3. 謝辞
+1. https://geek.tacoskingdom.com/blog/48
