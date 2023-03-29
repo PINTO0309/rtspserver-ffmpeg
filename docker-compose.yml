@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    rtspserver-ffmpeg:
+        build: .
+        container_name: rtspserver-ffmpeg
+        image: pinto0309/rtspserver-ffmpeg:latest
+        ports:
+            - "8554:8554"
+            - "8090:8090"
+        volumes:
+            - ${PWD}/ffserver.conf:/etc/ffserver.conf
+            - ${PWD}:/home/user/
+        restart: always
