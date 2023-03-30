@@ -1,6 +1,8 @@
 # rtspserver-ffmpeg
 Build an ffmpeg RTSP distribution server using an old alpine:3.8 Docker Image.
 
+v4l2 version: https://github.com/PINTO0309/rtspserver-v4l2
+
 ## 0. 前準備
 - `git clone`
     ```bash
