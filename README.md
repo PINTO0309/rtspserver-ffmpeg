@@ -20,6 +20,11 @@ v4l2 version: https://github.com/PINTO0309/rtspserver-v4l2
     docker compose exec rtspserver-ffmpeg \
     ffmpeg -re -stream_loop -1 -i xxxx.mp4 http://localhost:8090/feed.ffm
     ```
+- `docker compose` 経由でコンテナを起動したあとに `docker compose exec` コマンドを使用して `ffmpeg` によるRTSP配信開始指示、`-stream_loop -1` は無限ループしないバージョン
+    ```bash
+    docker compose exec rtspserver-ffmpeg \
+    ffmpeg -re -i xxxx.mp4 -b:v 1.5M http://localhost:8090/feed.ffm
+    ```
 - `docker compose` 経由でコンテナを起動したあとに配信用コンテナを終了
     ```bash
     docker compose down
@@ -46,6 +51,11 @@ v4l2 version: https://github.com/PINTO0309/rtspserver-v4l2
     ```bash
     docker exec rtspserver-ffmpeg \
     ffmpeg -re -stream_loop -1 -i xxxx.mp4 http://localhost:8090/feed.ffm
+    ```
+- `docker run` 経由でコンテナを起動したあとに `docker exec` コマンドを使用して `ffmpeg` によるRTSP配信開始指示、無限ループ再生しないバージョン
+    ```bash
+    docker exec rtspserver-ffmpeg \
+    ffmpeg -re -i xxxx.mp4 -b:v 1.5M http://localhost:8090/feed.ffm
     ```
 - `docker run` 経由でコンテナを起動したあとに配信用コンテナを終了
     ```bash
